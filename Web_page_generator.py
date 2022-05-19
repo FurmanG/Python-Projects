@@ -34,7 +34,7 @@ def Save_change():
 
 # Open the html file in the browser
 def open_to_browser():
-    webbrowser.get('C:/Program Files/Google/Chrome/Application/chrome.exe %s').open_new_tab('file:///C:/Users/Gil/Documents/Tech%20Acadeny/Python-Projects/new_file.html')
+  webbrowser.open_new_tab('new_file.html')
 
 # Label button and entry for Search for existing html file
 lbl_browse = Label(root, text='Search for existing html file --->')
