@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Hello World {% endblock %}
+
+{% block header %} 
+
+
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <form name="profileForm" method="POST" action="../details/">
+      <table>
+        {% charset %}
+        {{ from.non_field_errors }}
+        {{ form.as_table }}
+      </table>
+      <div class="frmBtn_container">
+        <ul>
+          <li><a href="../{{ form.pk}}delete/">DELETE</a></li>
+          <li><a href="{% url 'admin_console' %}">CANCEL</a></li>
+        </ul>
+      </div>
+    </form>
+</div>
+{% endblock %}
+
+
+
+
