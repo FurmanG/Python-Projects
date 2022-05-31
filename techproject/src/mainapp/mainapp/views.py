@@ -1,6 +1,31 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+
+
 
 
 def home(request):
-    print(request.user)
-    return HttpResponse("<h1>Welcome user!</h1>")
+    products = ["Cherries", "Apples", "Oranges", "Strawberries", "Pears", "Watermelons"]
+    context = {
+        'products': products,
+    }
+
+    return render(request, "home.html", context)
+
+
+
+
+
+
+""""
+from django.http import HttpResponse
+from django.shortcuts import render
+
+
+def home(request):
+    products = ["Cherries", "Apples", "Oranges", "Strawberries", "Pears", "Watermelons"]
+    context = {
+        'products': products,
+    }
+    return render(request, "home.html", context)
+"""
