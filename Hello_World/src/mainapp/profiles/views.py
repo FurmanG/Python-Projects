@@ -46,8 +46,6 @@ def confirmed(request):
 
 def createRecord(request):
     form = ProfileForm(request.POST or None)
-    print("=====================================")
-    print(form)
     if form.is_valid():
         form.save()
         return redirect('admin_console')
@@ -57,13 +55,10 @@ def createRecord(request):
     context = {
         'form': form,
     }
-    return render(request, 'products/createRecord.html', context)
+    return render(request, 'profiles/createRecord.html', context)
 
 """
-Create a form for the user to create a new profile.
-Create a button that saves the new profile.
 Add a delete button that deletes the profile.
-Add a cancel button that takes the user back to the profiles drop down form.
 When a user clicks the delete button on the Profile details page, 
 create a prompt that asks the user if they are sure they want to delete their profile.
 """
