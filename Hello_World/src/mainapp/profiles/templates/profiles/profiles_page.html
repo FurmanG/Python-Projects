@@ -6,17 +6,17 @@
 
 {% block content %}
 
-<div>
-    <form method="POST" action="">
-        <div>
+<div class="admin_panel">
+    <form name="ProfileForm" method="POST" action="">
+        <div class="formObject">
             {% csrf_token %}
             <label for="profile_id">Select a profile from the list to edit</label>
              <select id="profile_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
-            {% for profile in Profiles %}
+            {% for profile in profiles %}
                 <option value="../{{ profile.pk }}/details/" >{{ profile.Firstname }}</option>
             {% endfor %}
             </select>
-            <div>
+            <div class="fromBtn_container">
                 <a href="{% url 'createRecord' %}"><button type="button" class="btn">Add New Profile</button></a>
                 <a href="{% url 'home' %}"><button type="button" class="btn">Logout of Profile</button></a>
             </div>
@@ -24,6 +24,8 @@
     </form>
 </div>
 {% endblock %}
+
+
 
 
 

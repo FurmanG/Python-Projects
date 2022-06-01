@@ -46,6 +46,8 @@ def confirmed(request):
 
 def createRecord(request):
     form = ProfileForm(request.POST or None)
+    print("=====================================")
+    print(form)
     if form.is_valid():
         form.save()
         return redirect('admin_console')

@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div>
+<div class="admin_panel">
     <form name="profileForm" method="POST" action="../details/">
       <table>
         {% csrf_token %}
@@ -24,6 +24,5 @@
     </form>
 </div>
 {% endblock %}
-
 
 
