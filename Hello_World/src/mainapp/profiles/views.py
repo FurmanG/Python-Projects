@@ -31,7 +31,7 @@ def delete(request, pk):
         item.delete()
         return redirect('admin_console')
     context = {"item": item,}
-    return render(request, "products/confirmDelete.html", context)
+    return render(request, "profiles/confirmDelete.html", context)
 
 
 def confirmed(request):
