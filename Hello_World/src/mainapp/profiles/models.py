@@ -9,7 +9,7 @@ TYPE_CHOICES = {
 
 
 # Create your models here.
-class profiles (models.Model):
+class Profile (models.Model):
     Prefixes = models.CharField(max_length=60, default="", choices= TYPE_CHOICES)
     Firstname = models.CharField(max_length=60, default="", blank=True, null=False)
     Lastname = models.CharField(max_length=60, default="", blank=True, null=False)
@@ -20,3 +20,6 @@ class profiles (models.Model):
 
     def __str__(self):
         return self.Firstname
+
+
+

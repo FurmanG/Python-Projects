@@ -1,10 +1,10 @@
 from cProfile import Profile
 from django.forms import ModelForm
-from .models import profiles
+from .models import Profile
 
 
 class ProfileForm(ModelForm):
   class Meta:
-    model = profiles
+    model = Profile
     fields = '__all__'
 

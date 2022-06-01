@@ -5,6 +5,11 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('profiles_page', views.profiles_page, name="profiles_page"),
+    path('admin_console', views.admin_console, name="admin_console"),
     path('<int:pk>/details/', views.details, name="details"),
+    path('<int:pk>/delete/', views.delete, name="delete"),
+    path('confirmdelete/', views.confirmed, name="confirmed"),
+    path('createRecord/', views.createRecord, name="createRecord"),
 ]
+
+

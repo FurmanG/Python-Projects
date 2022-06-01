@@ -2,10 +2,7 @@
 
 {% block title %}Hello World {% endblock %}
 
-{% block header %} 
-
-
-{% endblock %}
+{% block header %} {% endblock %}
 
 {% block content %}
 
@@ -15,12 +12,12 @@
             {% csrf_token %}
             <label for="profile_id">Select a profile from the list to edit</label>
              <select id="profile_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
-            {% for profile in profiles %}
-                <option value="..//{{ profile.pk }}/details/" >{{ profile.Firstname }}</option>
+            {% for profile in Profiles %}
+                <option value="../{{ profile.pk }}/details/" >{{ profile.Firstname }}</option>
             {% endfor %}
             </select>
             <div>
-                <a href=""><button type="button" class="btn">Creat New Profile</button></a>
+                <a href="{% url 'createRecord' %}"><button type="button" class="btn">Add New Profile</button></a>
                 <a href="{% url 'home' %}"><button type="button" class="btn">Logout of Profile</button></a>
             </div>
         </div>
