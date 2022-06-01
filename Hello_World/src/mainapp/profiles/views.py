@@ -12,7 +12,7 @@ def  profiles_page(request):
 
 def details(request, pk):
     pk = int(pk)
-    item = get_object_or_404(Profile, pk=pk)
+    item = get_object_or_404(profiles, pk=pk)
     form = ProfileForm(data=request.POST or None, instance=item)
     if request.method == 'POST':
         if form.is_valid():
@@ -22,7 +22,7 @@ def details(request, pk):
         else:
             print(form.errors)
     else:
-        return render(request, 'profiles/present_profile.html', {'from':form})
+        return render(request, 'profiles/present_profile.html', {'form':form})
 
 
 
